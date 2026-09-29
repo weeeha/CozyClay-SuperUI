@@ -23,6 +23,7 @@
 	--accent-ring: rgba(58, 124, 191, .5);
 	--on-accent: #ffffff;
 	--fg-strong: #ffffff;
+	--surface-bar: #232323;
 	--surface-sunk: #282828;
 	--raised: #3c3c3c;
 	--field: #2a2a2a;
@@ -161,7 +162,7 @@ select {
 	align-items: center;
 	gap: 20px;
 	padding: 0 16px;
-	background: rgba(35, 35, 35, .97);
+	background: var(--surface-bar);
 	border-bottom: 1px solid var(--line);
 }
 .topbar:after {
@@ -893,7 +894,7 @@ select {
 	display: flex;
 	align-items: center;
 	padding: 0 14px;
-	background: rgba(35, 35, 35, .97);
+	background: var(--surface-bar);
 	border-top: 1px solid var(--line);
 }
 
@@ -1011,7 +1012,7 @@ select {
 	border: 1px solid rgba(255, 255, 255, .22);
 	border-bottom-width: 2px;
 	border-radius: 4px;
-	background: #232323;
+	background: var(--surface-bar);
 	color: var(--fg);
 	font: 650 9px var(--mono);
 	text-align: center;
@@ -4889,7 +4890,7 @@ input[type=range]::-moz-range-thumb {
 	height: 16px;
 	padding: 0 3px;
 	border: 1px solid #e7b557;
-	background: #232323;
+	background: var(--surface-bar);
 	color: var(--fg-strong);
 	font: inherit;
 	outline: 0;
@@ -5752,7 +5753,7 @@ input[type=range]::-moz-range-thumb {
 .hierarchy-heading,
 .inspector-heading {
 	border-color: rgba(255, 255, 255, .14);
-	background: #232323;
+	background: var(--surface-bar);
 }
 
 .hierarchy-heading strong,
@@ -6128,7 +6129,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .timeline {
-	background: #232323;
+	background: var(--surface-bar);
 	border-color: rgba(255, 255, 255, .22);
 	box-shadow: 0 -5px 14px rgba(0, 0, 0, .08);
 }
@@ -6186,7 +6187,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .tl-ruler {
-	background: #232323;
+	background: var(--surface-bar);
 	border-color: rgba(255, 255, 255, .18);
 }
 
