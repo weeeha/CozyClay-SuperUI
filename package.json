@@ -8,6 +8,8 @@
     "build": "vite build && node tools/sitemap.mjs",
     "test": "npm run build && node tools/run-tests.mjs",
     "test:manifest": "node tools/run-tests.mjs --list",
+    "check:tokens": "node tools/check-tokens.mjs",
+    "audit:contrast": "node tools/audit-contrast.mjs",
     "test:analytics": "node test/verify-analytics.mjs",
     "test:lifecycle": "npm run build && node test/process/verify-lifecycle.mjs && node test/process/verify-bridge-launch.mjs",
     "test:mcp-package": "node test/process/verify-mcp-package-isolation.mjs",
