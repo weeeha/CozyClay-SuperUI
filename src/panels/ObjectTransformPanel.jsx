@@ -5,6 +5,7 @@ import { sceneObjectNameDisplayKo } from "../app-stage.jsx";
 import { setSceneObjectParent, MESH_KIND, CUTOUT_KIND, CUTOUT_DEFAULT_HEIGHT, OBJECT_COLORS, normalizeObjectColor } from "../scene-objects.js";
 import { MESH_HEIGHT_MIN } from "../scene-mesh.js";
 import { autoColorHex } from "../auto-color.js";
+import { FiRotateCcw, FiRotateCw, FiTrash2 } from "react-icons/fi";
 
 export default function ObjectTransformPanel({
 	selectedSceneObject, snapEnabled, setSnapEnabled, changeSceneObject, attachTargetLabel, hierarchyReparent,
@@ -239,7 +240,7 @@ export default function ObjectTransformPanel({
 														aria-label={ko("Undo", "실행 취소")}
 														onClick={() => matteEditorRef.current?.undo()}
 													>
-														<span aria-hidden="true">↩️</span>
+														<FiRotateCcw aria-hidden="true" />
 													</button>
 													<button
 														type="button"
@@ -248,7 +249,7 @@ export default function ObjectTransformPanel({
 														aria-label={ko("Redo", "다시 실행")}
 														onClick={() => matteEditorRef.current?.redo()}
 													>
-														<span aria-hidden="true">↪️</span>
+														<FiRotateCw aria-hidden="true" />
 													</button>
 												</div>
 												<div className="presets matte-modes matte-icons matte-clear">
@@ -258,7 +259,7 @@ export default function ObjectTransformPanel({
 														aria-label={ko("Clear the selection", "선택 모두 지우기")}
 														onClick={() => matteEditorRef.current?.clear()}
 													>
-														<span aria-hidden="true">🗑️</span>
+														<FiTrash2 aria-hidden="true" />
 													</button>
 												</div>
 											</div>

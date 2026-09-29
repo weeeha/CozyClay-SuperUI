@@ -33,7 +33,7 @@ pass("manifest exposes installable 192px, 512px, and maskable PNG icons");
 const index = readFileSync("app/index.html", "utf8");
 assert.match(index, /<html lang="en">/);
 assert.match(index, /rel="manifest" href="\/manifest\.webmanifest"/);
-assert.match(index, /name="theme-color" content="#232323"/);
+assert.match(index, /name="theme-color" content="#09090b"/);
 assert.match(index, /rel="apple-touch-icon"/);
 pass("document metadata advertises the manifest, theme, and Apple icon");
 

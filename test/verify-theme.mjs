@@ -20,11 +20,13 @@ expect("Inter is the only bundled active UI family", css.includes("@font-face{fo
 expect("display and UI roles both use Inter", css.includes('--display: "Inter"') && css.includes('--sans: "Inter"'));
 expect("numeric editing data has a monospace role", css.includes("--mono: ui-monospace") && css.includes("font-family: var(--mono)"));
 expect("wordmark uses a modern heavy display treatment", css.includes("font-weight: 750") && css.includes("letter-spacing: -.045em"));
-expect("chrome backdrop token matches Unity dark", css.includes("--bg: #1e1e1e"));
-expect("chrome foreground token is light on dark", css.includes("--fg: #d2d2d2"));
-expect("chrome panel token matches Unity dark chrome", css.includes("--panel: #2c2c2c"));
-expect("chrome accent token matches Unity selection blue family", css.includes("--accent: #3a7cbf"));
-expect("timeline lanes sit on a dark surface", css.includes("--surface-sunk: #282828") && css.includes("background-color: var(--surface-sunk)"));
+// Chrome tokens follow the Minimal Design System (@weeeha/ui) dark theme with
+// its --accent-info blue as the accent, documented above :root in styles.css.
+expect("chrome backdrop token is the system's surface-page", css.includes("--bg: #09090b"));
+expect("chrome foreground token is the system's text-primary", css.includes("--fg: #fafafa"));
+expect("chrome panel token is the system's surface-card", css.includes("--panel: #18181b"));
+expect("chrome accent token is the system's accent-info blue", css.includes("--accent: #155dfc"));
+expect("timeline lanes sit on a dark surface", css.includes("--surface-sunk: #09090b") && /\.tl-lane \{[^}]*background-color: var\(--surface-sunk\)/.test(css));
 expect("IK uses pencil red", css.includes(".tl-marker.ik") && css.includes("background: #d65f55"));
 expect("current frame uses lightbox amber", css.includes(".tl-frame-box") && css.includes("background: #e7b557"));
 // The bright stage stays the default; grid view may swap in the dark void.

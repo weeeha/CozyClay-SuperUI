@@ -27,7 +27,7 @@ export const SHOT_ASPECT = 16 / 9;
 /** Letterbox bars are chrome, so they wear the editor's background (--bg in
  * styles.css) rather than the scene's sky. Kept in sync by eye: a mismatch
  * here reads as a seam around the frame, not as a wrong colour. */
-export const LETTERBOX = new THREE.Color("#1e1e1e");
+export const LETTERBOX = new THREE.Color("#09090b");
 /** half-height of the plan frustum, in metres — covers the full camera throw */
 export const PLAN_EXTENT = 12.4;
 
