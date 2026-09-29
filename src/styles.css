@@ -22,6 +22,13 @@
 	--accent-soft: rgba(45, 92, 138, .35);
 	--accent-ring: rgba(58, 124, 191, .5);
 	--on-accent: #ffffff;
+	--fg-strong: #ffffff;
+	--surface-sunk: #282828;
+	--raised: #3c3c3c;
+	--field: #2a2a2a;
+	--line-soft: #232323;
+	--scroll-thumb: #4a4a4a;
+	--scroll-thumb-hover: #5c5c5c;
 	--grad: linear-gradient(103deg, #2d5c8a 0%, #2d5c8a 100%);
 	--grad-soft: linear-gradient(103deg, #2d5c8a, #3a7cbf);
 	--display: "Inter", "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -82,7 +89,7 @@
 }
 .crash-card button {
 	background: var(--accent);
-	color: #fff;
+	color: var(--fg-strong);
 	border: 0;
 	border-radius: 6px;
 	padding: 9px 22px;
@@ -124,12 +131,12 @@ select {
 	height: 11px;
 }
 ::-webkit-scrollbar-thumb {
-	background: #4a4a4a;
+	background: var(--scroll-thumb);
 	border-radius: 8px;
 	border: 3px solid var(--panel);
 }
 ::-webkit-scrollbar-thumb:hover {
-	background: #5c5c5c;
+	background: var(--scroll-thumb-hover);
 }
 ::-webkit-scrollbar-track {
 	background: rgba(231, 181, 87, .16);
@@ -443,7 +450,7 @@ select {
 	height: 22px;
 	border-radius: 50%;
 	background: var(--accent);
-	color: #fff;
+	color: var(--fg-strong);
 	font-size: 11px;
 }
 
@@ -1548,7 +1555,7 @@ select {
 	/* a slate line is a readout, not a control: presses belong to the scene
 	   underneath it (grabbing an object low in frame used to hit this instead) */
 	pointer-events: none;
-	color: #fff;
+	color: var(--fg-strong);
 	padding: 7px 16px;
 	border-radius: 9px;
 	font-size: 11px;
@@ -1586,11 +1593,11 @@ select {
 	transition: all .16s var(--ease);
 }
 .viewmode button:hover {
-	color: #fff;
+	color: var(--fg-strong);
 }
 .viewmode button.active {
 	background: var(--grad);
-	color: #fff;
+	color: var(--fg-strong);
 	box-shadow: 0 3px 12px #3346ff66;
 }
 
@@ -1599,7 +1606,7 @@ select {
 	pointer-events: none;
 	background: #0e0d10d9;
 	border: 1px solid var(--line2);
-	color: #fff;
+	color: var(--fg-strong);
 	padding: 3px 10px;
 	border-radius: 20px;
 	font-size: 11px;
@@ -1615,7 +1622,7 @@ select {
 	font-family: var(--sans);
 	font-size: 12.5px;
 	font-weight: 600;
-	color: #fff;
+	color: var(--fg-strong);
 	background: var(--grad);
 	border: none;
 	padding: 8px 16px;
@@ -1983,7 +1990,7 @@ select {
 	background: linear-gradient(transparent, #06060aeb);
 	font-size: 10px;
 	font-weight: 700;
-	color: #fff;
+	color: var(--fg-strong);
 	text-align: center;
 	padding: 18px 6px 7px;
 	white-space: nowrap;
@@ -2002,7 +2009,7 @@ select {
 	height: 19px;
 	border-radius: 50%;
 	background: #08080cd1;
-	color: #fff;
+	color: var(--fg-strong);
 	font-size: 10px;
 	font-style: normal;
 	display: flex;
@@ -2629,7 +2636,7 @@ select {
 .presets button:hover {
 	background: var(--hover);
 	border-color: #4d7bff73;
-	color: #fff;
+	color: var(--fg-strong);
 	transform: translateY(-1px);
 }
 .presets button:active {
@@ -2637,7 +2644,7 @@ select {
 }
 .presets button.active {
 	border-color: #4d7bffbf;
-	color: #fff;
+	color: var(--fg-strong);
 	font-weight: 600;
 	background: linear-gradient(180deg, #4d7bff42, #3346ff1f);
 	box-shadow: 0 0 0 1px #4d7bff40, 0 5px 16px #3346ff33;
@@ -2870,7 +2877,7 @@ input[type=range]::-moz-range-thumb {
 	color: #ccccd4;
 }
 .segmented button.active {
-	color: #fff;
+	color: var(--fg-strong);
 }
 
 .sheet-checks {
@@ -3163,7 +3170,7 @@ input[type=range]::-moz-range-thumb {
 .cam-toggle.active {
 	background: var(--grad);
 	border-color: transparent;
-	color: #fff;
+	color: var(--fg-strong);
 	box-shadow: 0 3px 12px #3346ff80;
 }
 
@@ -3182,7 +3189,7 @@ input[type=range]::-moz-range-thumb {
 	transition: color var(--fast), background var(--fast);
 }
 .sb-remove:hover {
-	color: #fff;
+	color: var(--fg-strong);
 	background: #e5484d;
 }
 /* current App.jsx renders the subject remove button as button.x until the
@@ -3202,7 +3209,7 @@ input[type=range]::-moz-range-thumb {
 	transition: color var(--fast), background var(--fast);
 }
 .subject-box-head .x:hover {
-	color: #fff;
+	color: var(--fg-strong);
 	background: #e5484d;
 }
 
@@ -3351,7 +3358,7 @@ input[type=range]::-moz-range-thumb {
 }
 .dropdown-item:hover {
 	background: var(--hover);
-	color: #fff;
+	color: var(--fg-strong);
 }
 .dropdown-item.active {
 	color: var(--cyan);
@@ -3434,7 +3441,7 @@ input[type=range]::-moz-range-thumb {
 	transition: color var(--fast), background var(--fast);
 }
 .modal .x:hover {
-	color: #fff;
+	color: var(--fg-strong);
 	background: var(--card2);
 }
 
@@ -4088,7 +4095,7 @@ input[type=range]::-moz-range-thumb {
 .tl-camera-tool.active {
 	background: #7258a0;
 	border-color: #a78bfa;
-	color: #fff;
+	color: var(--fg-strong);
 }
 
 .tl-camera-tool.danger {
@@ -4100,7 +4107,7 @@ input[type=range]::-moz-range-thumb {
 .tl-camera-tool.danger:focus-visible {
 	background: rgba(229, 72, 77, .18);
 	border-color: #e5484d;
-	color: #fff;
+	color: var(--fg-strong);
 }
 
 .tl-camera-head:disabled,
@@ -4342,7 +4349,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .tl-toggle:hover {
-	color: #fff;
+	color: var(--fg-strong);
 	background: var(--hover);
 	border-color: var(--line2);
 }
@@ -4427,7 +4434,7 @@ input[type=range]::-moz-range-thumb {
 	align-items: center;
 	justify-content: center;
 	background: var(--accent);
-	color: #fff;
+	color: var(--fg-strong);
 	font-size: 11px;
 	font-weight: 600;
 	font-variant-numeric: tabular-nums;
@@ -4641,7 +4648,7 @@ input[type=range]::-moz-range-thumb {
 	align-items: center;
 	padding: 0 8px;
 	background: linear-gradient(103deg, #2b3cf5, #4d7bff);
-	color: #fff;
+	color: var(--fg-strong);
 	font-size: 9.5px;
 	font-weight: 600;
 	letter-spacing: .02em;
@@ -4673,7 +4680,7 @@ input[type=range]::-moz-range-thumb {
 	border: 0;
 	outline: 0;
 	background: transparent;
-	color: #fff;
+	color: var(--fg-strong);
 	font: inherit;
 	font-weight: 600;
 	cursor: grab;
@@ -4777,7 +4784,7 @@ input[type=range]::-moz-range-thumb {
 .tl-shot-empty-add:focus-visible {
 	background: #5b467b;
 	border-color: #b79be8;
-	color: #fff;
+	color: var(--fg-strong);
 }
 
 .tl-shot-block.active {
@@ -4883,7 +4890,7 @@ input[type=range]::-moz-range-thumb {
 	padding: 0 3px;
 	border: 1px solid #e7b557;
 	background: #232323;
-	color: #fff;
+	color: var(--fg-strong);
 	font: inherit;
 	outline: 0;
 }
@@ -5733,7 +5740,7 @@ input[type=range]::-moz-range-thumb {
    untouched so the production workflow remains familiar. */
 
 .panel.hierarchy-sidebar {
-	background: #282828;
+	background: var(--surface-sunk);
 	border-color: rgba(255, 255, 255, .22);
 }
 
@@ -5786,7 +5793,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .selected .hierarchy-label {
-	color: #ffffff;
+	color: var(--fg-strong);
 }
 
 .hierarchy-status {
@@ -5814,7 +5821,7 @@ input[type=range]::-moz-range-thumb {
 .selected .hierarchy-icon { filter: brightness(1.25); }
 
 .inspector-scroll {
-	background: #282828;
+	background: var(--surface-sunk);
 }
 
 .card {
@@ -5879,7 +5886,7 @@ input[type=range]::-moz-range-thumb {
 .inspector-list button:hover,
 .inspector-list button.active {
 	border-color: rgba(58, 124, 191, .56);
-	background: #3c3c3c;
+	background: var(--raised);
 	color: var(--fg);
 }
 
@@ -5891,7 +5898,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .presets button:hover {
-	background: #3c3c3c;
+	background: var(--raised);
 	border-color: rgba(58, 124, 191, .48);
 	color: var(--fg);
 	transform: none;
@@ -5960,7 +5967,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .dropdown-item:hover {
-	background: #3c3c3c;
+	background: var(--raised);
 	color: var(--fg);
 }
 
@@ -5989,7 +5996,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .segmented button.active {
-	color: #fff;
+	color: var(--fg-strong);
 }
 
 .btn {
@@ -6013,7 +6020,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .btn.ghost:hover {
-	background: #3c3c3c;
+	background: var(--raised);
 	color: var(--fg);
 }
 
@@ -6079,7 +6086,7 @@ input[type=range]::-moz-range-thumb {
 
 .viewmode button.active {
 	background: var(--accent);
-	color: #fff;
+	color: var(--fg-strong);
 	box-shadow: none;
 }
 
@@ -6090,7 +6097,7 @@ input[type=range]::-moz-range-thumb {
 .grid-toggle.active {
 	color: var(--cyan);
 	border-color: var(--accent);
-	background: #3c3c3c;
+	background: var(--raised);
 }
 
 .film-frame i:before,
@@ -6127,7 +6134,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .tl-head {
-	background: #282828;
+	background: var(--surface-sunk);
 	border-color: rgba(255, 255, 255, .18);
 }
 
@@ -6140,7 +6147,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .tl-btn:hover {
-	background: #3c3c3c;
+	background: var(--raised);
 	border-color: var(--accent);
 }
 
@@ -6148,7 +6155,7 @@ input[type=range]::-moz-range-thumb {
 .tl-btn.play:hover {
 	background: var(--accent);
 	border-color: #397f91;
-	color: #fff;
+	color: var(--fg-strong);
 }
 
 .tl-readout {
@@ -6175,7 +6182,7 @@ input[type=range]::-moz-range-thumb {
 
 .tl-body,
 .tl-surface {
-	background: #282828;
+	background: var(--surface-sunk);
 }
 
 .tl-ruler {
@@ -6185,7 +6192,7 @@ input[type=range]::-moz-range-thumb {
 
 .tl-ruler-label,
 .tl-track-label {
-	background: #282828;
+	background: var(--surface-sunk);
 	border-color: rgba(255, 255, 255, .16);
 	color: #52616b;
 }
@@ -6203,7 +6210,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .tl-lane {
-	background-color: #282828;
+	background-color: var(--surface-sunk);
 }
 
 .tl-grid {
@@ -6230,7 +6237,7 @@ input[type=range]::-moz-range-thumb {
 
 .tl-chip {
 	background: var(--accent);
-	color: #fff;
+	color: var(--fg-strong);
 	border-radius: 4px;
 	box-shadow: none;
 }
@@ -7839,7 +7846,7 @@ input[type=range]::-moz-range-thumb {
 }
 .workflow-mode-switch button:hover { color: var(--fg); background: var(--hover); }
 .workflow-mode-switch button.active {
-	color: #fff;
+	color: var(--fg-strong);
 	background: var(--accent-2);
 	border-color: #4b8bc4;
 	box-shadow: 0 0 0 1px rgba(75,139,196,.24);
@@ -7962,7 +7969,7 @@ input[type=range]::-moz-range-thumb {
 .presets button.active {
 	background: var(--accent-2);
 	border-color: var(--line);
-	color: #fff;
+	color: var(--fg-strong);
 	box-shadow: none;
 }
 
@@ -7972,7 +7979,7 @@ input[type=range]::-moz-range-thumb {
 .field textarea,
 .field select,
 .dropdown .trigger {
-	background-color: #2a2a2a;
+	background-color: var(--field);
 	border: 1px solid var(--line);
 	color: var(--fg);
 }
@@ -7994,7 +8001,7 @@ input[type=range]::-moz-range-thumb {
 
 .dropdown-item:hover {
 	background: var(--accent-2);
-	color: #fff;
+	color: var(--fg-strong);
 }
 
 /* cards become Unity component sections: flat, header bar, no accent strip */
@@ -8063,7 +8070,7 @@ input[type=range]::-moz-range-thumb {
 
 /* segmented control: flat Unity toggle strip */
 .segmented {
-	background: #2a2a2a;
+	background: var(--field);
 	border: 1px solid var(--line);
 	padding: 2px;
 }
@@ -8147,7 +8154,7 @@ input[type=range]::-moz-range-thumb {
 	height: 28px;
 	padding: 0 12px;
 	border-bottom: 1px solid var(--line);
-	background: #282828;
+	background: var(--surface-sunk);
 }
 
 .inspector-heading > span {
@@ -8174,7 +8181,7 @@ input[type=range]::-moz-range-thumb {
 .card {
 	background: transparent;
 	border: 0;
-	border-bottom: 1px solid #232323;
+	border-bottom: 1px solid var(--line-soft);
 	border-radius: 0;
 	padding: 0 0 8px;
 }
@@ -8636,7 +8643,7 @@ input[type=range] {
 .subject-box {
 	padding: 6px 8px 8px;
 	border-radius: 2px;
-	background: #282828;
+	background: var(--surface-sunk);
 }
 
 .sb-name,
@@ -8781,7 +8788,7 @@ input[type=range] {
 
 .editor-toolbar.scene-tools .tool-switch button.active {
 	background: var(--accent-2);
-	color: #fff;
+	color: var(--fg-strong);
 }
 
 .editor-toolbar.scene-tools .snap-switch.active {
@@ -8867,7 +8874,7 @@ input[type=range] {
 
 .editor-toolbar.scene-tools > button:hover {
 	background: #363636;
-	color: #fff;
+	color: var(--fg-strong);
 }
 
 /* The studio's one Export menu (#165, moved to the topbar in #193). It reuses
@@ -9164,7 +9171,7 @@ input[type=range] {
 .view-menu-trigger:hover,
 .view-menu-trigger[aria-expanded="true"] {
 	background: #363636;
-	color: #fff;
+	color: var(--fg-strong);
 }
 
 .view-menu-trigger .caret {
@@ -9394,7 +9401,7 @@ input[type=range] {
 
 /* open sections get the header rule and indented body */
 .card.foldout.open .foldout-head {
-	border-bottom: 1px solid #232323;
+	border-bottom: 1px solid var(--line-soft);
 }
 
 .card.foldout {
@@ -9403,7 +9410,7 @@ input[type=range] {
 }
 
 .card.foldout.open {
-	border-bottom: 1px solid #232323;
+	border-bottom: 1px solid var(--line-soft);
 }
 
 .foldout-body {
@@ -9418,13 +9425,13 @@ input[type=range] {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #4a4a4a;
+	background: var(--scroll-thumb);
 	border-radius: 4px;
 	border: none;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #5c5c5c;
+	background: var(--scroll-thumb-hover);
 }
 
 ::-webkit-scrollbar-track {
@@ -9557,7 +9564,7 @@ input[type=range] {
 	justify-content: flex-end;
 	padding: 6px 12px;
 	border-top: 1px solid var(--line);
-	background: #282828;
+	background: var(--surface-sunk);
 }
 
 .inspector-footer span {
@@ -9768,7 +9775,7 @@ input[type=range] {
 	padding: 12px 13px;
 	border: 1px solid var(--line2);
 	border-left: 3px solid var(--accent);
-	background: #282828;
+	background: var(--surface-sunk);
 }
 
 .result-next h4 {

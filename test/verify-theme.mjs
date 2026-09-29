@@ -24,7 +24,7 @@ expect("chrome backdrop token matches Unity dark", css.includes("--bg: #1e1e1e")
 expect("chrome foreground token is light on dark", css.includes("--fg: #d2d2d2"));
 expect("chrome panel token matches Unity dark chrome", css.includes("--panel: #2c2c2c"));
 expect("chrome accent token matches Unity selection blue family", css.includes("--accent: #3a7cbf"));
-expect("timeline lanes sit on a dark surface", css.includes("background-color: #282828"));
+expect("timeline lanes sit on a dark surface", css.includes("--surface-sunk: #282828") && css.includes("background-color: var(--surface-sunk)"));
 expect("IK uses pencil red", css.includes(".tl-marker.ik") && css.includes("background: #d65f55"));
 expect("current frame uses lightbox amber", css.includes(".tl-frame-box") && css.includes("background: #e7b557"));
 // The bright stage stays the default; grid view may swap in the dark void.
