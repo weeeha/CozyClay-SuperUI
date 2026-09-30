@@ -12,8 +12,8 @@
 		"minimal-ui"
 	],
 	"orientation": "landscape-primary",
-	"background_color": "#1e1e1e",
-	"theme_color": "#232323",
+	"background_color": "#09090b",
+	"theme_color": "#09090b",
 	"categories": [
 		"graphics-design",
 		"photo",

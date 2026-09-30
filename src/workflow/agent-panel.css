@@ -24,6 +24,11 @@
 	--agent-border: #292d38;
 	--agent-border-strong: #353a4a;
 	--agent-border-focus: #707dce;
+	--agent-border-hover: #606b9a;
+	--agent-hover: #2b3040;
+	--agent-accent-hover: #37437f;
+	--agent-accent-hover-edge: #6b7ad4;
+	--agent-ok-edge: #2f5a4b;
 
 	--agent-text: #edf0fb;
 	--agent-text-muted: #9aa2b8;
@@ -77,6 +82,47 @@
  * hangs from a different line in the same rules. */
 .app {
 	--agent-drawer-top: 48px;
+}
+
+.app {
+	/* Inside the studio the panel reads the studio's own tokens (Minimal Design System,
+	 * see :root in styles.css), so it is one surface with the inspector
+	 * beside it. The block above stays the palette for /workflow/. */
+	--agent-bg: var(--panel);
+	--agent-bg-raised: var(--card);
+	--agent-bg-sunken: var(--bg);
+	--agent-bubble: var(--card);
+	--agent-border: var(--line);
+	--agent-border-strong: var(--line2);
+	--agent-border-focus: var(--cyan);
+	--agent-border-hover: rgba(255, 255, 255, .2); /* input at 20%: one step over --line2 */
+	--agent-hover: var(--hover);
+	--agent-accent-hover: var(--accent-2);
+	--agent-accent-hover-edge: var(--accent-2);
+	--agent-ok-edge: color-mix(in srgb, var(--success) 40%, transparent);
+	--agent-text: var(--fg);
+	--agent-text-muted: var(--muted);
+	--agent-text-dim: var(--muted2);
+	--agent-accent: var(--cyan);
+	--agent-accent-deep: var(--accent);
+	--agent-accent-edge: var(--accent);
+	--agent-accent-text: var(--on-accent);
+	--agent-ok: var(--success);
+	--agent-warn: var(--warn);
+	--agent-alert: var(--danger);
+	--agent-radius-sm: var(--radius-control);
+	--agent-radius-md: var(--radius-control);
+	--agent-radius-lg: var(--radius-card);
+	--agent-radius-pill: var(--radius-pill);
+	--agent-shadow: var(--shadow-lg);
+	--agent-track: var(--track);
+	--agent-warn-edge: color-mix(in srgb, var(--warn) 40%, transparent);
+	--agent-warn-bg: color-mix(in srgb, var(--warn) 10%, var(--panel));
+	--agent-warn-text: var(--warn);
+	--agent-alert-edge: color-mix(in srgb, var(--danger) 40%, transparent);
+	--agent-alert-bg: color-mix(in srgb, var(--danger) 10%, var(--panel));
+	--agent-alert-text: var(--danger);
+	--agent-ok-deep: color-mix(in srgb, var(--success) 14%, var(--panel));
 }
 
 /* The studio keeps no collapsed rail. The builder can afford a permanent strip
@@ -173,15 +219,15 @@
 	height: 26px;
 	border: 1px solid var(--agent-border-strong);
 	border-radius: var(--agent-radius-md);
-	background: #20232d;
-	color: #c8ccdb;
+	background: var(--agent-bg-raised);
+	color: var(--agent-text);
 	cursor: pointer;
 	font: inherit;
 }
 
 .agent-rail-toggle:hover {
-	border-color: #606b9a;
-	background: #2b3040;
+	border-color: var(--agent-border-hover);
+	background: var(--agent-hover);
 }
 
 .agent-rail-label {
@@ -200,10 +246,10 @@
 	flex: none;
 }
 
-.agent-status-dot.ok { background: var(--agent-ok); box-shadow: 0 0 8px var(--agent-ok); }
-.agent-status-dot.busy { background: var(--agent-accent); box-shadow: 0 0 8px var(--agent-accent); }
-.agent-status-dot.warn { background: var(--agent-warn); box-shadow: 0 0 8px var(--agent-warn); }
-.agent-status-dot.alert { background: var(--agent-alert); box-shadow: 0 0 8px var(--agent-alert); }
+.agent-status-dot.ok { background: var(--agent-ok); }
+.agent-status-dot.busy { background: var(--agent-accent); }
+.agent-status-dot.warn { background: var(--agent-warn); }
+.agent-status-dot.alert { background: var(--agent-alert); }
 
 /* --- header ------------------------------------------------------------ */
 
@@ -215,14 +261,14 @@
 	height: 58px;
 	padding: 0 var(--agent-space-4);
 	border-bottom: 1px solid var(--agent-border);
-	background: #171921;
+	background: var(--agent-bg-sunken);
 }
 
 .agent-title {
 	margin: 0;
 	font-size: var(--agent-font-xl);
 	font-weight: 700;
-	color: #f5f7ff;
+	color: var(--agent-text);
 }
 
 .agent-header-spacer { flex: 1; }
@@ -234,8 +280,8 @@
 	gap: var(--agent-space-1);
 	border: 1px solid var(--agent-border-strong);
 	border-radius: var(--agent-radius-md);
-	background: #20232d;
-	color: #c8ccdb;
+	background: var(--agent-bg-raised);
+	color: var(--agent-text);
 	padding: var(--agent-space-2) var(--agent-space-3);
 	font: inherit;
 	font-size: var(--agent-font-md);
@@ -246,9 +292,9 @@
 
 .agent-icon-button:hover,
 .agent-ghost-button:hover {
-	border-color: #606b9a;
-	background: #2b3040;
-	color: #f5f7ff;
+	border-color: var(--agent-border-hover);
+	background: var(--agent-hover);
+	color: var(--agent-text);
 }
 
 .agent-ghost-button[disabled],
@@ -278,7 +324,7 @@
 	border: 0;
 	border-radius: var(--agent-radius-sm);
 	background: transparent;
-	color: #c8ccdb;
+	color: var(--agent-text);
 	padding: var(--agent-space-2) var(--agent-space-3);
 	font: inherit;
 	font-size: var(--agent-font-md);
@@ -286,7 +332,7 @@
 	cursor: pointer;
 }
 
-.agent-menu button:hover { background: #2b3040; color: #f5f7ff; }
+.agent-menu button:hover { background: var(--agent-hover); color: var(--agent-text); }
 
 /* --- account strip ----------------------------------------------------- */
 
@@ -313,7 +359,7 @@
 	padding: 2px var(--agent-space-2);
 	border: 1px solid var(--agent-accent-edge);
 	border-radius: var(--agent-radius-pill);
-	color: #cfd5ff;
+	color: var(--agent-accent-text);
 	font-size: var(--agent-font-xs);
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
@@ -462,7 +508,7 @@
 .agent-bubble {
 	max-width: 86%;
 	padding: var(--agent-space-3) var(--agent-space-4);
-	border: 1px solid #343b58;
+	border: 1px solid var(--agent-border-strong);
 	border-radius: var(--agent-radius-lg);
 	background: var(--agent-bubble);
 	color: var(--agent-text);
@@ -473,7 +519,7 @@
 }
 
 .agent-assistant-text {
-	color: #dfe3f2;
+	color: var(--agent-text);
 	font-size: var(--agent-font-lg);
 	line-height: 1.6;
 	white-space: pre-wrap;
@@ -495,7 +541,7 @@
 .agent-card {
 	border: 1px solid var(--agent-border-strong);
 	border-radius: var(--agent-radius-lg);
-	background: #20232d;
+	background: var(--agent-bg-raised);
 	overflow: hidden;
 }
 
@@ -504,7 +550,7 @@
 	align-items: center;
 	gap: var(--agent-space-3);
 	padding: var(--agent-space-3) var(--agent-space-4);
-	color: #ccd1e2;
+	color: var(--agent-text);
 	font-size: var(--agent-font-md);
 	cursor: pointer;
 	list-style: none;
@@ -512,30 +558,30 @@
 
 .agent-tool-card summary::-webkit-details-marker { display: none; }
 .agent-tool-label { flex: 1; }
-.agent-tool-badge { color: #aeb7ff; border: 1px solid #6975d8; border-radius: 999px; padding: 1px 5px; font-size: 10px; line-height: 1.2; }
+.agent-tool-badge { color: var(--agent-accent); border: 1px solid var(--agent-accent-edge); border-radius: var(--agent-radius-pill); padding: 1px 5px; font-size: 10px; line-height: 1.2; }
 .agent-tool-elapsed { color: var(--agent-text-dim); font: var(--agent-font-sm) ui-monospace, monospace; }
 
 .agent-tool-detail {
 	margin: 0;
 	padding: var(--agent-space-3) var(--agent-space-4);
-	border-top: 1px solid #2c3140;
+	border-top: 1px solid var(--agent-border);
 	background: var(--agent-bg-sunken);
-	color: #98a0b8;
+	color: var(--agent-text-muted);
 	font: var(--agent-font-sm) ui-monospace, monospace;
 	white-space: pre-wrap;
 	word-break: break-all;
 }
 
-.agent-card.failed { border-color: #6d3a52; }
+.agent-card.failed { border-color: var(--agent-alert-edge); }
 
 .agent-error {
 	display: flex;
 	flex-direction: column;
 	gap: var(--agent-space-2);
 	padding: var(--agent-space-3) var(--agent-space-4);
-	border-top: 1px solid #6d3a52;
-	background: #2a1c26;
-	color: #f3c7d8;
+	border-top: 1px solid var(--agent-alert-edge);
+	background: var(--agent-alert-bg);
+	color: var(--agent-alert-text);
 	font-size: var(--agent-font-md);
 }
 
@@ -556,7 +602,7 @@
 	flex-wrap: wrap;
 	gap: var(--agent-space-2);
 	padding: var(--agent-space-3);
-	border-top: 1px solid #2c3140;
+	border-top: 1px solid var(--agent-border);
 }
 
 .agent-image-actions button,
@@ -566,8 +612,8 @@
 	gap: var(--agent-space-1);
 	border: 1px solid var(--agent-border-strong);
 	border-radius: var(--agent-radius-sm);
-	background: #292d39;
-	color: #ccd1e2;
+	background: var(--agent-bubble);
+	color: var(--agent-text);
 	padding: var(--agent-space-2) var(--agent-space-3);
 	font: inherit;
 	font-size: var(--agent-font-sm);
@@ -578,18 +624,18 @@
 .agent-image-actions button.primary {
 	border-color: var(--agent-accent-edge);
 	background: var(--agent-accent-deep);
-	color: #e6e9ff;
+	color: var(--agent-accent-text);
 }
 
 .agent-image-actions button:hover,
-.agent-image-actions a:hover { border-color: #606b9a; }
+.agent-image-actions a:hover { border-color: var(--agent-border-hover); }
 
 .agent-placed {
 	display: flex;
 	align-items: center;
 	gap: var(--agent-space-2);
 	padding: var(--agent-space-3);
-	border-top: 1px solid #2c3140;
+	border-top: 1px solid var(--agent-border);
 	color: var(--agent-ok);
 	font-size: var(--agent-font-md);
 }
@@ -598,8 +644,8 @@
 	margin-left: auto;
 	border: 1px solid var(--agent-border-strong);
 	border-radius: var(--agent-radius-sm);
-	background: #292d39;
-	color: #ccd1e2;
+	background: var(--agent-bubble);
+	color: var(--agent-text);
 	padding: var(--agent-space-1) var(--agent-space-3);
 	font: inherit;
 	font-size: var(--agent-font-sm);
@@ -644,7 +690,7 @@
 	display: flex;
 	align-items: center;
 	gap: var(--agent-space-2);
-	color: #ccd1e2;
+	color: var(--agent-text);
 }
 
 .agent-job-label { font-weight: 600; }
@@ -721,7 +767,7 @@
 
 .agent-job-accept:hover {
 	border-color: var(--agent-warn);
-	background: #33291a;
+	background: var(--agent-warn-bg);
 	color: var(--agent-warn-text);
 }
 
@@ -735,15 +781,15 @@
 
 .agent-job-note.alert { color: var(--agent-alert); }
 
-.agent-job-card[data-job-state="installed"] { border-color: #2f5a4b; background: var(--agent-ok-deep); }
+.agent-job-card[data-job-state="installed"] { border-color: var(--agent-ok-edge); background: var(--agent-ok-deep); }
 .agent-job-card[data-job-state="review_required"] { border-color: var(--agent-warn-edge); background: var(--agent-warn-bg); }
 .agent-job-card[data-job-state="failed"],
 .agent-job-card[data-job-state="stale_target"],
-.agent-job-card[data-job-state="stale_environment"] { border-color: #6d3a52; }
+.agent-job-card[data-job-state="stale_environment"] { border-color: var(--agent-alert-edge); }
 
 .agent-receipt-summary { line-height: 1.5; word-break: break-word; }
 
-.agent-failure-card { border-color: #6d3a52; background: #2a1c26; }
+.agent-failure-card { border-color: var(--agent-alert-edge); background: var(--agent-alert-bg); }
 .agent-failure-code {
 	color: var(--agent-alert);
 	font: var(--agent-font-sm) ui-monospace, monospace;
@@ -753,9 +799,9 @@
 .agent-image-error {
 	margin: 0;
 	padding: var(--agent-space-3);
-	border-top: 1px solid #6d3a52;
-	background: #2a1c26;
-	color: #f3c7d8;
+	border-top: 1px solid var(--agent-alert-edge);
+	background: var(--agent-alert-bg);
+	color: var(--agent-alert-text);
 	font-size: var(--agent-font-md);
 	line-height: 1.45;
 }
@@ -778,7 +824,7 @@
 	margin: 0;
 	font-size: var(--agent-font-xl);
 	font-weight: 700;
-	color: #f5f7ff;
+	color: var(--agent-text);
 }
 
 .agent-state-card p {
@@ -793,21 +839,21 @@
 	border: 1px solid var(--agent-accent-edge);
 	border-radius: var(--agent-radius-md);
 	background: var(--agent-accent-deep);
-	color: #e6e9ff;
+	color: var(--agent-accent-text);
 	padding: var(--agent-space-3) var(--agent-space-5);
 	font: inherit;
 	font-size: var(--agent-font-lg);
 	cursor: pointer;
 }
 
-.agent-primary-button:hover { border-color: #6b7ad4; background: #37437f; }
+.agent-primary-button:hover { border-color: var(--agent-accent-hover-edge); background: var(--agent-accent-hover); }
 .agent-primary-button[disabled] { opacity: 0.6; cursor: progress; }
 
 .agent-spinner {
 	width: 18px;
 	height: 18px;
 	align-self: center;
-	border: 2px solid #383e55;
+	border: 2px solid var(--agent-border-strong);
 	border-top-color: var(--agent-accent);
 	border-radius: var(--agent-radius-pill);
 	animation: agent-spin 700ms linear infinite;
@@ -820,10 +866,10 @@
 	flex-direction: column;
 	gap: var(--agent-space-3);
 	padding: var(--agent-space-4);
-	border: 1px solid #6a5a34;
+	border: 1px solid var(--agent-warn-edge);
 	border-radius: var(--agent-radius-lg);
-	background: #241f16;
-	color: #f0dcb4;
+	background: var(--agent-warn-bg);
+	color: var(--agent-warn-text);
 	font-size: var(--agent-font-md);
 }
 
@@ -832,10 +878,10 @@
 .agent-paused-actions { display: flex; gap: var(--agent-space-2); }
 
 .agent-paused-actions button {
-	border: 1px solid #6a5a34;
+	border: 1px solid var(--agent-warn-edge);
 	border-radius: var(--agent-radius-sm);
-	background: #33291a;
-	color: #f3e3c1;
+	background: var(--agent-warn-bg);
+	color: var(--agent-warn-text);
 	padding: var(--agent-space-2) var(--agent-space-3);
 	font: inherit;
 	font-size: var(--agent-font-sm);
@@ -856,8 +902,8 @@
 .agent-chip {
 	border: 1px solid var(--agent-border-strong);
 	border-radius: var(--agent-radius-pill);
-	background: #20232d;
-	color: #bcc2d4;
+	background: var(--agent-bg-raised);
+	color: var(--agent-text-muted);
 	padding: var(--agent-space-2) var(--agent-space-4);
 	font: inherit;
 	font-size: var(--agent-font-md);
@@ -865,7 +911,7 @@
 	cursor: pointer;
 }
 
-.agent-chip:hover { border-color: #606b9a; background: #2b3040; color: #f5f7ff; }
+.agent-chip:hover { border-color: var(--agent-border-hover); background: var(--agent-hover); color: var(--agent-text); }
 
 /* --- activity line ------------------------------------------------------ */
 
@@ -904,7 +950,6 @@
 
 .agent-activity-indicator.busy {
 	background: var(--agent-accent);
-	box-shadow: 0 0 8px var(--agent-accent);
 	animation: agent-pulse 1100ms ease-in-out infinite;
 }
 
@@ -1048,8 +1093,8 @@
 	gap: var(--agent-space-2);
 	border: 1px solid var(--agent-border-strong);
 	border-radius: var(--agent-radius-pill);
-	background: #20232d;
-	color: #b6bcd0;
+	background: var(--agent-bg-raised);
+	color: var(--agent-text-muted);
 	padding: var(--agent-space-1) var(--agent-space-3);
 	font: inherit;
 	font-size: var(--agent-font-sm);
@@ -1059,15 +1104,15 @@
 .agent-attach-chip[aria-pressed="true"] {
 	border-color: var(--agent-accent-edge);
 	background: var(--agent-accent-deep);
-	color: #e6e9ff;
+	color: var(--agent-accent-text);
 }
 
 .agent-attach-thumb {
 	width: 22px;
 	height: 14px;
-	border: 1px solid #454d70;
-	border-radius: 3px;
-	background: linear-gradient(135deg, #2a2f52, #5b3550);
+	border: 1px solid var(--agent-border-strong);
+	border-radius: var(--agent-radius-sm);
+	background: var(--agent-bg-raised);
 }
 
 .agent-model-select {
@@ -1076,7 +1121,7 @@
 	border: 1px solid var(--agent-border-strong);
 	border-radius: var(--agent-radius-sm);
 	background: var(--agent-bg-sunken);
-	color: #e5e8f5;
+	color: var(--agent-text);
 	padding: var(--agent-space-2) var(--agent-space-3);
 	font: inherit;
 	font-size: var(--agent-font-md);
@@ -1105,14 +1150,14 @@
 	border: 1px solid var(--agent-accent-edge);
 	border-radius: var(--agent-radius-md);
 	background: var(--agent-accent-deep);
-	color: #e6e9ff;
+	color: var(--agent-accent-text);
 	padding: var(--agent-space-2) var(--agent-space-5);
 	font: inherit;
 	font-size: var(--agent-font-md);
 	cursor: pointer;
 }
 
-.agent-send.stop { border-color: #7a3f58; background: #4a2536; color: #f8d5e3; }
+.agent-send.stop { border-color: var(--agent-alert-edge); background: var(--agent-alert-bg); color: var(--agent-alert-text); }
 .agent-send[disabled] { opacity: 0.45; cursor: not-allowed; }
 
 /* One line of panel chrome for something the panel tried and could not do: a

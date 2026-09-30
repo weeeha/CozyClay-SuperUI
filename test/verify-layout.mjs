@@ -89,9 +89,9 @@ expect(
 // is scissored to the image so the sky inside the frame is unchanged.
 expect(
 	"letterbox bars are painted in the editor's tone, not the sky",
-	dualview.includes('export const LETTERBOX = new THREE.Color("#1e1e1e");') &&
+	dualview.includes('export const LETTERBOX = new THREE.Color("#09090b");') &&
 	dualview.includes("gl.setClearColor(LETTERBOX, 1);") &&
-	css.includes("--bg: #1e1e1e"),
+	css.includes("--bg: #09090b"),
 );
 expect(
 	"the scene draw is scissored to the image so the bars survive it",
