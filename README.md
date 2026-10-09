@@ -30,6 +30,10 @@
 
 ---
 
+![CozyClay Studio on the City Block scene: scene hierarchy, viewport with Top-View and Shot monitors, and the animation timeline](docs/screenshots/overview.webp)
+
+**Live:** https://cozyclay-superui.vercel.app/app/ (this fork's deployment, opened on the starter scene with `?scene=city-block`)
+
 CozyClay is a browser-based previs studio built with Three.js and React Three Fiber. Block a scene, pose the cast, cut the camera on a timeline, then hand the same shot to an AI video model (Seedance, Kling, Veo, or your own) as a first frame, a reference clip, or a prompt — all from one local workspace. The keyframe pack's greybox clip is the input Seedance 2.5 documents as white-model control: "Use the white-model reference video as the sole guide for camera movement, pacing, framing, subject motion, and blocking" (seed.bytedance.com/en/seedance2_5). MiniMax H3, Wan 3.0, LTX Desktop and fal render-to-real take the same plain RGB clip.
 
 ```bash
@@ -77,11 +81,15 @@ A global install gives you `cclay`, the same command with less typing. Once a da
 
 New to the camera? The seven-step tutorial runs inside the Studio on the City Block set: **Settings ▾ → Camera tutorial**, or open `http://127.0.0.1:5180/app/?tutorial=camera`. Each step points at the control it needs and completes only when you actually make the move.
 
+### This fork
+
+This repository is a fork of [NomaDamas/CozyClay](https://github.com/NomaDamas/CozyClay). On top of upstream it restyles the Studio on Minimal Design System tokens and adds two gates, `npm run check:tokens` and `npm run audit:contrast`. The `npx cozyclay` command and the npm badge above refer to the upstream package, which does not include the restyle. To see the fork's styling, use the live link at the top or run from source.
+
 ### From source
 
 ```bash
-git clone https://github.com/NomaDamas/CozyClay.git
-cd CozyClay
+git clone https://github.com/weeeha/CozyClay-SuperUI.git
+cd CozyClay-SuperUI
 npm install
 npm run dev
 ```
